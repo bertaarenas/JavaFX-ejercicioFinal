@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.VBox?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.paint2.PaintController"
+            prefWidth="900" prefHeight="650"
+            style="-fx-background-color: #2b2b2b;">
+    <left>
+        <VBox spacing="12" alignment="TOP_LEFT"
+              fillWidth="true"
+              prefWidth="120"
+              style="-fx-background-color: #3c3f41;
+                 -fx-padding: 10px;
+                 -fx-border-color: #555;
+                 -fx-border-width: 0 1 0 0;">
+            <Label text="Paint"
+                   style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <Label style="-fx-text-fill: #666; -fx-font-size: 20px;"/>
+
+            <Button fx:id="botonLapiz"
+                    text="Lápiz"
+                    maxWidth="Infinity"
+                    onAction="#seleccionarLapiz"
+                    style="-fx-background-color: #FF69B4;
+                           -fx-text-fill: white;
+                           -fx-font-size: 13px;
+                           -fx-cursor: hand;"/>
+
+
+            <Button fx:id="botonBorrador"
+                    text="Borrador"
+                    maxWidth="Infinity"
+                    onAction="#seleccionarBorrador"
+                    style="-fx-background-color: #FF69B4;
+                           -fx-text-fill: white;
+                           -fx-font-size: 13px;
+                           -fx-cursor: hand;"/>
+
+            <Label text="Color:"
+                   style="-fx-text-fill: #ccc;"/>
+
+            <ColorPicker fx:id="selectorColor"
+                         onAction="#cambiaColor"/>
+
+            <Button text="Limpiar"
+                    maxWidth="Infinity"
+                    onAction="#limpiarLienzo"
+                    style="-fx-background-color: #FF69B4;
+                           -fx-text-fill: white;
+                           -fx-font-size: 13px;
+                           -fx-cursor: hand;"/>
+
+            <Button text="Guardar"
+                    maxWidth="Infinity"
+                    onAction="#guardarImagen"
+                    style="-fx-background-color: #FF69B4;
+                           -fx-text-fill: white;
+                           -fx-font-size: 13px;
+                           -fx-cursor: hand;"/>
+        </VBox>
+    </left>
+
+    <center>
+        <ScrollPane fitToWidth="true" fitToHeight="true"
+                    style="-fx-background: #1e1e1e; -fx-background-color: #1e1e1e;">
+            <Canvas fx:id="lienzo"
+                    width="880" height="580"/>
+        </ScrollPane>
+    </center>
+
+</BorderPane>
